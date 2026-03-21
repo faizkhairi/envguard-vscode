@@ -1,0 +1,63 @@
+{
+  "name": "envguard-vscode",
+  "displayName": "EnvGuard",
+  "description": "Inline diagnostics for environment variables -- find missing, unused, and undocumented env vars without leaving your editor",
+  "version": "1.0.0",
+  "publisher": "faizkhairi",
+  "author": "Faiz Khairi <ifaizkhairi@gmail.com>",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/faizkhairi/envguard-vscode"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Linters",
+    "Other"
+  ],
+  "keywords": [
+    "env",
+    "dotenv",
+    "environment variables",
+    "lint",
+    "audit",
+    ".env",
+    ".env.example"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/.env",
+    "workspaceContains:**/.env.example"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "EnvGuard",
+      "properties": {
+        "envguard.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable EnvGuard diagnostics"
+        },
+        "envguard.includeBuiltins": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include built-in variables (NODE_ENV, PATH, etc.) in diagnostics"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "package": "npx @vscode/vsce package --no-dependencies",
+    "publish": "npx @vscode/vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
