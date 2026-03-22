@@ -1,12 +1,11 @@
 {
   "name": "envguard-vscode",
-  "displayName": "EnvGuard",
+  "displayName": "EnvGuard - Env Var Auditor",
   "description": "Inline diagnostics for environment variables -- find missing, unused, and undocumented env vars without leaving your editor",
   "version": "1.0.0",
   "publisher": "faizkhairi",
   "author": "Faiz Khairi <ifaizkhairi@gmail.com>",
   "license": "MIT",
-  "icon": "icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/faizkhairi/envguard-vscode"
@@ -56,8 +55,9 @@
     "publish": "npx @vscode/vsce publish --no-dependencies"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.0",
     "@types/node": "^22.0.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.7.1",
     "typescript": "^5.7.0"
   }
 }
